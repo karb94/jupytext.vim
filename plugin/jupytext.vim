@@ -264,7 +264,7 @@ function s:read_from_ipynb()
     if (l:filename_exists && !b:jupytext_file_exists)
         call s:debugmsg("Generate file ".b:jupytext_file)
         let l:cmd = g:jupytext_command." --to=".g:jupytext_fmt
-        \         . " --opt cell_markers={{{,}}}" . " "
+        \         . " --opt cell_markers=\"{{{,}}}\"" . " "
         \         . " --output=".shellescape(b:jupytext_file) . " "
         \         . shellescape(l:filename)
         call s:debugmsg("cmd: ".l:cmd)
