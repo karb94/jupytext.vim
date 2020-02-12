@@ -248,7 +248,7 @@ augroup END
 
 function s:read_from_ipynb()
     au! jupytext_ipynb * <buffer>
-    let l:foldmethod = marker
+    let &l:foldmethod = 'marker'
     let l:filename = resolve(expand("<afile>:p"))
     let l:fileroot = fnamemodify(l:filename, ':r')
     if get(s:jupytext_extension_map, g:jupytext_fmt, 'none') == 'none'
